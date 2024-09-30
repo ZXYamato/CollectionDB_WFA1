@@ -53,12 +53,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(82, 415);
+            this.button1.Location = new System.Drawing.Point(112, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -75,7 +76,6 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Name*";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -186,9 +186,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(15, 217);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(102, 17);
+            this.checkBox1.Size = new System.Drawing.Size(96, 17);
             this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Special Edition?";
+            this.checkBox1.Text = "Special Edition";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -196,9 +196,9 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(15, 253);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(48, 17);
+            this.checkBox2.Size = new System.Drawing.Size(42, 17);
             this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "CiB?";
+            this.checkBox2.Text = "CiB";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox3
@@ -206,20 +206,19 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(15, 285);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
+            this.checkBox3.Size = new System.Drawing.Size(58, 17);
             this.checkBox3.TabIndex = 18;
-            this.checkBox3.Text = "checkBox3";
+            this.checkBox3.Text = "Played";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(15, 318);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
+            this.checkBox4.Size = new System.Drawing.Size(60, 17);
             this.checkBox4.TabIndex = 19;
-            this.checkBox4.Text = "checkBox4";
+            this.checkBox4.Text = "Beaten";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox5
@@ -227,9 +226,9 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(15, 349);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
+            this.checkBox5.Size = new System.Drawing.Size(64, 17);
             this.checkBox5.TabIndex = 20;
-            this.checkBox5.Text = "checkBox5";
+            this.checkBox5.Text = "Favorite";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // Form2
@@ -260,7 +259,6 @@
             this.Controls.Add(this.button1);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
