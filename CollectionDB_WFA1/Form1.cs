@@ -19,6 +19,7 @@ namespace CollectionDB_WFA1
     public partial class Form1 : Form
     {
         string constr = ("Server=localhost;Database=VideoGameCollection;Trusted_Connection=True");
+        public static string entry = "";
         public Form1()
         {
             InitializeComponent();
@@ -26,10 +27,10 @@ namespace CollectionDB_WFA1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var t = new Thread(RunNewForm);
+            var t = new Thread(RunNewForm2);
             t.Start();
         }
-        public static void RunNewForm()
+        public static void RunNewForm2()
         {
             Application.Run(new Form2());
         }
@@ -84,9 +85,21 @@ namespace CollectionDB_WFA1
                 listBox1.DataSource = nameData;
             }
         }
-    }
-    class SQLCon
-    {
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            entry = listBox1.Text;
+            var t = new Thread(RunNewForm3);
+            t.Start();
+        }
+        public static void RunNewForm3()
+        {
+            Application.Run(new Form3());
+        }
     }
 }

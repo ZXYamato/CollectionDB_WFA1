@@ -11,18 +11,43 @@ using System.Windows.Forms;
 
 namespace CollectionDB_WFA1
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            string constr = ("Server=localhost;Database=VideoGameCollection;Trusted_Connection=True");
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Name, Franchise, Developer, Platform, Released, Special_Edition, CiB, Played, Beaten, Favorite FROM Games WHERE Name = '" + Form1.entry + "'", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    textBox1.Text = reader.GetString(0);
+                    textBox2.Text = reader.GetString(1);
+                    textBox3.Text = reader.GetString(2);
+                    textBox4.Text = reader.GetString(3);
+                    dateTimePicker1.Value = reader.GetDateTime(4);
+                    checkBox1.Checked = reader.GetBoolean(5);
+                    checkBox2.Checked = reader.GetBoolean(6);
+                    checkBox3.Checked = reader.GetBoolean(7);
+                    checkBox4.Checked = reader.GetBoolean(8);
+                    checkBox5.Checked = reader.GetBoolean(9);
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string constr = ("Server=localhost;Database=VideoGameCollection;Trusted_Connection=True");
             using (SqlConnection con = new SqlConnection(constr))
             {
-                SqlCommand cmd = new SqlCommand("dbo.Games_Add", con);
+                SqlCommand cmd = new SqlCommand("dbo.Games_Update", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Name", textBox1.Text);
                 cmd.Parameters.AddWithValue("@Franchise", textBox2.Text);
